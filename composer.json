@@ -1,0 +1,6 @@
+{
+    "name": "Richie",
+    "require": {
+        "slim/slim": "3.0"
+    }
+}
