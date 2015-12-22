@@ -95,10 +95,19 @@ class Postcode implements JsonSerializable {
         return json_encode($this);
     }
 
+    private function getLatitudeAndLongitude() {
+        $convert = new Academe\OsgbTools\Convert;
+        $latLng = $convert->osGridToLatLong($this->eastings, $this->northings);
+        return $latLng;
+    }
+
     public function jsonSerialize() {
+        $latLng = $this->getLatitudeAndLongitude();
         return array('postcode' => $this->postcode,
             'eastings' => $this->eastings,
-            'northings' => $this->northings);
+            'northings' => $this->northings,
+            'latitude' => $latLng->getLatitude(),
+            'longitude' => $latLng->getLongitude());
     }
 
 }
