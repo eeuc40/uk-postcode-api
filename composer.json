@@ -5,7 +5,11 @@
     },
     "autoload": {
         "psr-0": {
-            "Postcode":        "classes/"
+            "PostcodeDatabase":        "classes/database/",
+            "PostcodeFactory":        "classes/factories/",
+            "Factory":        "classes/factories/",
+            "Postcode":        "classes/objects/"
+            
         }
     }
 }
